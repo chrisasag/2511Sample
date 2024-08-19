@@ -66,6 +66,8 @@ The following relationship is an example of:
 - B) Composition
 - C) Neither
 
+ [Ans:A)]
+
 **Submit your answer using the following command:**
 
 ### `submit mc 1` <!-- omit in toc -->
@@ -85,6 +87,8 @@ Pick the most semantically correct type from the list below:
 
 **Submit your answer using the following command:**
 
+[Ans:B)]
+
 ### `submit mc 2` <!-- omit in toc -->
 
 ## Question 3 (2 marks)
@@ -101,6 +105,8 @@ You have a program that needs to print error messages from multiple methods. All
 
 **Submit your answer using the following command:**
 
+[Ans:C)]
+
 ### `submit mc 3` <!-- omit in toc -->
 
 ## Question 4 (2 marks)
@@ -112,6 +118,8 @@ Which of the following would be a valid use case for instanceof instead of getCl
 - C) It’s a trick question, you should never use instanceof in your code at all
 
 **Submit your answer using the following command:**
+
+[Ans:A]
 
 ### `submit mc 4` <!-- omit in toc -->
 
@@ -131,6 +139,8 @@ Which SOLID principle is being violated? Select the most suitable answer.
 
 **Submit your answer using the following command:**
 
+[Ans:B)]
+
 ### `submit mc 5` <!-- omit in toc -->
 
 ## Question 6 (2 marks)
@@ -146,6 +156,8 @@ Which design patterns are particularly focused on inter-object communication?
 
 ### `submit mc 6` <!-- omit in toc -->
 
+[Ans:C]
+
 ## And more questions...
 
 # Part 2: Short Answer (25 Marks)
@@ -159,6 +171,8 @@ Is the following an example of aggregation or composition? Explain why.
 Write your answer inside `q7.txt`.
 
 **Submit your answer using the following command:**
+
+[Q7Ans:This is an example of composition. A breakout room cannot exist outside of a call. When the call ends, all contained breakrooms must end as well.]
 
 ### `submit q7` <!-- omit in toc -->
 
@@ -194,6 +208,10 @@ Is this valid inheritance? Conceptually justify your answer.
 
 Write your answer inside `q8.txt`.
 
+[Q8ans:This is not a valid inheritance, as it violates the Liskov Substitution Principal (LSP). The issue here is that the UNSWStudent class violates the postconditions of scheduleClass method that are imposed by the Student class. When a Student schedules a class that is not available, it schedules the nearest class outside of the requested times. In contrast, a UNSWStudent does not schedule any class when this occurs. The subclass UNSWStudent is increasing the number of possible outcomes that occur in the post conditions. This means UNSWStudent cannot be substituted for a Student (as required by LSP), and therefore this is not a valid inheritance.
+Another issue is that the subclass throws an additional exception that the parent class does not declare. This also increases the number of possible outcomes in the parent class and constitutes a weakening of the postconditions, thereby violating LSP.
+(Either one of the two above reasons would be enough) ]
+
 **Submit your answer using the following command:**
 
 ### `submit q8` <!-- omit in toc -->
@@ -219,6 +237,8 @@ Explain why this error occurs.
 Write your answer inside `q9.txt`.
 
 **Submit your answer using the following command:**
+
+[Q9Ans: String does not implement the Collection interface. Therefore, String does not satisfy the generic bounds E extends Collection. This means that Stack is invalid, as Stack does not satisfy Stack<E extends Collection>.]
 
 ### `submit q9` <!-- omit in toc -->
 
@@ -269,6 +289,8 @@ Write your answer inside `q10.txt`.
 
 **Submit your answer using the following command:**
 
+[Q10Ans: Two code smells that are present in the above code is duplicated code and switch/if statements. (Other potential code smells present is inappropriate intimacy or feature envy.) A potential fix for the codebase is to move the logic inside each of the individual Satellite/Device classes so that the logic is in one place. The differences in implementation between each of the cases can be moved into an abstract class (or, in cases such as the type, put it as an attribute in the parent class). That way, we can reduce the entirety of this section of code in this location to entity.getInfo(); while letting polymorphism determine the differences between the implementations.]
+
 ### `submit q10` <!-- omit in toc -->
 
 ## Question 11 (3 marks)
@@ -300,6 +322,8 @@ Write your answer inside `q11.txt`.
 
 **Submit your answer using the following command:**
 
+[Q11Ans: The above program will print Woof woof!. This is due to the way dynamic polymorphism works. Dynamic polymorphism ensures that when you run a method on an object, the implementation that gets run depends on the runtime type (i.e. the type the object was instantiated as) rather than the compile-time time. In this case, even though the compile-time type of animal is the Animal class, the runtime type is Dog so the implementation of noise() that will be run is the overridden method inside the Dog class.]
+
 ### `submit q11` <!-- omit in toc -->
 
 ## Question 12 (3 marks)
@@ -313,6 +337,8 @@ Write your answer inside `q12.txt`.
 **Submit your answer using the following command:**
 
 ### `submit q12` <!-- omit in toc -->
+
+[Q12Ans:The adapter pattern is the most appropriate design pattern in this situation. The adapter pattern can 'adapt' the program outputting XML format into JSON format so that the application can read the data. A key characteristic in the adapter pattern is making two incompatible systems by adding an intermediary class in-between them. In this case, adding a class that would adapts the original application so that it outputs in JSON instead of XML would help this problem. Another part of the adapter pattern is that the original classes or codebases are impossible or hard to change to make compatible, which is present here.]
 
 ## And more questions...
 
